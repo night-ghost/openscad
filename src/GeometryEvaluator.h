@@ -18,21 +18,22 @@ public:
 
 	shared_ptr<const Geometry> evaluateGeometry(const AbstractNode &node, bool allownef);
 
-	Response visit(State &state, const AbstractNode &node) override;
-	Response visit(State &state, const AbstractIntersectionNode &node) override;
-	Response visit(State &state, const AbstractPolyNode &node) override;
-	Response visit(State &state, const LinearExtrudeNode &node) override;
-	Response visit(State &state, const RotateExtrudeNode &node) override;
-	Response visit(State &state, const GroupNode &node) override;
-	Response visit(State &state, const RootNode &node) override;
-	Response visit(State &state, const LeafNode &node) override;
-	Response visit(State &state, const TransformNode &node) override;
-	Response visit(State &state, const CsgOpNode &node) override;
-	Response visit(State &state, const CgaladvNode &node) override;
-	Response visit(State &state, const ProjectionNode &node) override;
-	Response visit(State &state, const RenderNode &node) override;
-	Response visit(State &state, const TextNode &node) override;
-	Response visit(State &state, const OffsetNode &node) override;
+	virtual Response visit(State &state, const AbstractNode &node) override;
+	virtual Response visit(State &state, const AbstractIntersectionNode &node) override;
+	virtual Response visit(State &state, const AbstractPolyNode &node) override;
+	virtual Response visit(State &state, const BendNode &node);
+	virtual Response visit(State &state, const LinearExtrudeNode &node) override;
+	virtual Response visit(State &state, const RotateExtrudeNode &node) override;
+	virtual Response visit(State &state, const GroupNode &node) override;
+	virtual Response visit(State &state, const RootNode &node) override;
+	virtual Response visit(State &state, const LeafNode &node) override;
+	virtual Response visit(State &state, const TransformNode &node) override;
+	virtual Response visit(State &state, const CsgOpNode &node) override;
+	virtual Response visit(State &state, const CgaladvNode &node) override;
+	virtual Response visit(State &state, const ProjectionNode &node) override;
+	virtual Response visit(State &state, const RenderNode &node) override;
+	virtual Response visit(State &state, const TextNode &node) override;
+	virtual Response visit(State &state, const OffsetNode &node) override;
 
 	const Tree &getTree() const { return this->tree; }
 
